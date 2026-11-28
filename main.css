@@ -1,0 +1,131 @@
+  :root {
+    --fond: #f2f5f3;
+    --surface: #ffffff;
+    --encre: #16231f;
+    --discret: #54635d;
+    --trait: #cfd9d4;
+    --accent: #0e5a4a;
+    --accent-texte: #ffffff;
+    --focus: #b45309;
+  }
+ 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: #101916;
+      --surface: #17231f;
+      --encre: #e8f0ec;
+      --discret: #9db0a8;
+      --trait: #2c3d37;
+      --accent: #5fd0b4;
+      --accent-texte: #0b1612;
+      --focus: #fbbf24;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--fond);
+    color: var(--encre);
+    font: 1rem/1.55 system-ui, "Segoe UI", Roboto, sans-serif;
+  }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+  /* ---------- Téléphone : une seule colonne ---------- */
+  .page { max-width: 64rem; margin: 0 auto; padding: 1rem 1rem 3rem; }
+
+  .retour { margin-bottom: 1rem; }
+
+  .entete { margin-bottom: 1.5rem; }
+  .categorie {
+    display: inline-block;
+    margin: 0;
+    padding: .2rem .7rem;
+    font-size: .875rem;
+    font-weight: 600;
+    color: var(--accent-texte);
+    background: var(--accent);
+    border-radius: 2rem;
+  }
+  h1 { font-size: 1.7rem; line-height: 1.2; margin: .6rem 0 .25rem; }
+  .emplacement { margin: 0; color: var(--discret); font-size: 1.05rem; }
+
+  .bloc { margin: 0 0 1.5rem; padding-top: 1rem; border-top: 1px solid var(--trait); }
+  h2 { font-size: 1.15rem; margin: 0 0 .6rem; }
+  .bloc p { margin: 0 0 .75rem; max-width: 60ch; }
+
+  /* Liste de description : une grille, une ligne par paire dt/dd */
+  dl {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 1rem;
+    margin: 0;
+  }
+  dt, dd { padding: .45rem 0; border-bottom: 1px solid var(--trait); }
+  dt { color: var(--discret); }
+  dd { margin: 0; font-weight: 600; text-align: right; }
+  dt:last-of-type, dd:last-of-type { border-bottom: 0; }
+
+  ol.acces { margin: 0; padding-left: 1.3rem; }
+  ol.acces li { margin-bottom: .5rem; padding-left: .2rem; }
+
+  ul.proches { list-style: none; margin: 0; padding: 0; }
+  ul.proches li { border-bottom: 1px solid var(--trait); }
+  ul.proches li:last-child { border-bottom: 0; }
+  ul.proches a { display: block; padding: .7rem 0; text-decoration: none; }
+  ul.proches a:hover .nom { text-decoration: underline; }
+  .nom { display: block; }
+  .detail { display: block; color: var(--discret); font-size: .925rem; }
+    .recherche { margin-bottom: 1.5rem; }
+  .recherche label { display: block; font-weight: 600; margin-bottom: .25rem; }
+  .recherche input {
+    width: 100%;
+    font: inherit;
+    padding: .7rem .8rem;
+    color: var(--encre);
+    background: var(--surface);
+    border: 1px solid var(--trait);
+    border-radius: .5rem;
+  }
+  .recherche input:focus-visible,
+  .resultats button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+  .resultats { list-style: none; margin: .5rem 0 0; padding: 0; border-top: 1px solid var(--trait); }
+  .resultats li { border-bottom: 1px solid var(--trait); }
+  .resultats button {
+    display: block;
+    width: 100%;
+    padding: .7rem .25rem;
+    font: inherit;
+    text-align: left;
+    color: var(--encre);
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+  .resultats button:hover strong { text-decoration: underline; }
+  .resultats small { display: block; color: var(--discret); }
+  #message-recherche { margin: .5rem 0 0; color: var(--discret); }
+
+  /* ---------- Ordinateur : deux colonnes ---------- */
+  @media (min-width: 48rem) {
+    .page {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(16rem, 1fr);
+      gap: 0 3rem;
+      align-items: start;
+      padding: 2rem 2rem 4rem;
+    }
+    .retour, .recherche, .entete { grid-column: 1 / -1; }    h1 { font-size: 2.3rem; }
+    .principal .bloc:first-child { border-top: 0; padding-top: 0; }
+    .lateral {
+      position: sticky;
+      top: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--trait);
+      border-radius: .75rem;
+    }
+    .lateral .bloc:first-child { border-top: 0; padding-top: 0; }
+    .lateral .bloc:last-child { margin-bottom: 0; }
+  }

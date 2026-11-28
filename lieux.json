@@ -1,0 +1,12 @@
+[
+  { "id": 1,  "nom": "Bibliothèque centrale",        "categorie": "Bibliothèque",   "batiment": "Bâtiment A", "etage": 1 },
+  { "id": 2,  "nom": "Amphithéâtre A",            "categorie": "Enseignement",   "batiment": "Bâtiment B", "etage": 0 },
+  { "id": 3,  "nom": "Salle informatique 3",         "categorie": "Enseignement",   "batiment": "Bâtiment C", "etage": 2 },
+  { "id": 4,  "nom": "Scolarité",                    "categorie": "Administration", "batiment": "Bâtiment A", "etage": 0 },
+  { "id": 5,  "nom": "Cafétéria du campus",          "categorie": "Restauration",   "batiment": "Bâtiment D", "etage": 0 },
+  { "id": 6,  "nom": "Infirmerie universitaire",     "categorie": "Santé",          "batiment": "Bâtiment E", "etage": 0 },
+  { "id": 7,  "nom": "Laboratoire de chimie",        "categorie": "Enseignement",   "batiment": "Bâtiment C", "etage": 1 },
+  { "id": 8,  "nom": "Salle d'études silencieuse",   "categorie": "Bibliothèque",   "batiment": "Bâtiment A", "etage": 2 },
+  { "id": 9,  "nom": "Bureau des bourses",           "categorie": "Administration", "batiment": "Bâtiment A", "etage": 1 },
+  { "id": 10, "nom": "Terrasse des étudiants",       "categorie": "Restauration",   "batiment": "Bâtiment D", "etage": 1 }
+]
